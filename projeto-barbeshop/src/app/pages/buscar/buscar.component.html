@@ -1,0 +1,30 @@
+<div class="buscar-container">
+  <h2>Buscar Usuários</h2>
+
+  <input
+    type="text"
+    [(ngModel)]="termo"
+    placeholder="Filtrar por nome"
+  />
+  <button (click)="carregarUsuarios()">Buscar</button>
+
+  <ul *ngIf="usuarios.length > 0">
+    <li *ngFor="let usuario of usuarios | filter: termo">
+      <div *ngFor="let usuario of usuarios">
+        <div *ngFor="let usuario of usuarios" class="usuario-card"></div>
+        <div class="usuario-card">
+          <p><strong>Nome:</strong> {{ usuario.nome }}</p>
+          <p><strong>Nome de Usuario:</strong> {{ usuario.nomeUsuario}}</p>
+          <p><strong>Email:</strong> {{ usuario.email }}</p>
+          <p><strong>Telefone:</strong> {{ usuario.telefone }}</p>
+        </div>
+        <hr>
+      </div>
+    </li>
+  </ul>
+
+  <p *ngIf="usuarios.length === 0">Nenhum usuário encontrado.</p>
+</div>
+
+
+
