@@ -1,1 +1,41 @@
-/* You can add global styles to this file, and also import other style files */
+/* Reset global spacing and ensure page background is black
+	 to remove white borders on the sides and bottom. */
+
+*, *::before, *::after {
+	box-sizing: border-box;
+}
+
+html, body, app-root {
+	height: 100%;
+	background: #000; /* black background for entire page */
+	color: #fff;
+}
+
+html, body {
+	margin: 0;
+	padding: 0;
+}
+
+body {
+	min-height: 100vh;
+	-webkit-font-smoothing: antialiased;
+	-moz-osx-font-smoothing: grayscale;
+}
+
+/* Optional: make scrollbars blend better on dark background */
+::-webkit-scrollbar {
+	width: 10px;
+}
+::-webkit-scrollbar-track {
+	background: transparent;
+}
+::-webkit-scrollbar-thumb {
+	background: rgba(255,255,255,0.08);
+	border-radius: 8px;
+}
+
+/* Ensure Angular root element fills viewport (avoids white gutters) */
+app-root {
+	display: block;
+	min-height: 100vh;
+}
